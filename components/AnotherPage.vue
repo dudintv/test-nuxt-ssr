@@ -9,7 +9,7 @@ const {
 
 <template>
   <section>
-    <h1>This is a not prerendered page</h1>
+    <h1>This is an another page</h1>
     <LoadingSpinner v-if="pendingReadme" />
     <span v-if="errorReadme" style="color: red">{{ errorReadme }}</span>
     <p>{{ readmeData }}</p>
