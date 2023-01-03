@@ -7,6 +7,8 @@ const {
   error: errorReadme,
 } = await useAsyncData("/api/readme", () => $fetch("/api/readme"));
 
+const appConfig = useAppConfig();
+
 onMounted(async () => {
   console.log("start prefetching");
   await preloadComponents("AnotherPage");
@@ -29,6 +31,7 @@ onMounted(async () => {
     <LoadingSpinner v-if="pendingReadme" />
     <TheButton @click="refreshReadme()">Refresh Readme</TheButton>
     <span v-if="errorReadme" style="color: red">{{ errorReadme }}</span>
+    <p>{{ appConfig }}</p>
   </section>
 </template>
 
