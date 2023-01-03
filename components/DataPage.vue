@@ -6,6 +6,12 @@ const {
   pending: pendingReadme,
   error: errorReadme,
 } = await useAsyncData("/api/readme", () => $fetch("/api/readme"));
+
+onMounted(async() => {
+  console.log('start prefetching')
+  await prefetchComponents('AnotherPage');
+  console.log('stop prefetching')
+}),
 </script>
 
 <template>
