@@ -2,9 +2,9 @@
 
 <template>
   <div>
-    <nav>
+    <!-- <nav>
       <nuxt-link to="another-page">Another Page</nuxt-link>
-    </nav>
+    </nav> -->
     <DataPage />
   </div>
 </template>
