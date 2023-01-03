@@ -9,7 +9,7 @@ const {
 
 onMounted(async () => {
   console.log("start prefetching");
-  await prefetchComponents("AnotherPage");
+  await preloadComponents("AnotherPage");
   console.log("stop prefetching");
 });
 </script>
