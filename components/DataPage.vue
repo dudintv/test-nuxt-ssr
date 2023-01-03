@@ -1,5 +1,11 @@
 <script setup lang="ts">
 const { data, refresh, pending } = await useAsyncData("/api/data", () => $fetch("/api/data"));
+const {
+  data: readmeData,
+  refresh: refreshReadme,
+  pending: pendingReadme,
+  error: errorReadme,
+} = await useAsyncData("/api/readme", () => $fetch("/api/readme"));
 </script>
 
 <template>
@@ -11,6 +17,11 @@ const { data, refresh, pending } = await useAsyncData("/api/data", () => $fetch(
       </ul>
     </div>
     <TheButton @click="refresh()">Refresh</TheButton>
+
+    <pre>readmeData = {{ readmeData }}</pre>
+    <LoadingSpinner v-if="pendingReadme" />
+    <TheButton @click="refreshReadme()">Refresh Readme</TheButton>
+    <span v-if="errorReadme" style="color: red">{{ errorReadme }}</span>
   </section>
 </template>
 
