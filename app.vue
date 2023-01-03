@@ -1,6 +1,6 @@
 <template>
   <div>
-    <DataPage />
+    <NuxtPage />
   </div>
 </template>
 
