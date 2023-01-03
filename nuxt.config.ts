@@ -3,9 +3,9 @@ export default defineNuxtConfig({
   // routeRules: {
   //   "/": { static: true },
   // },
-  // nitro: {
-  //   prerender: {
-  //     routes: ["/"],
-  //   },
-  // },
+  nitro: {
+    prerender: {
+      routes: ["/"],
+    },
+  },
 });
