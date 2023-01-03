@@ -10,6 +10,7 @@ const {
 onMounted(async () => {
   console.log("start prefetching");
   await preloadComponents("AnotherPage");
+  await preloadRouteComponents("/another-page");
   console.log("stop prefetching");
 });
 </script>
