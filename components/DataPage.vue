@@ -27,8 +27,14 @@ onMounted(async () => {
     </div>
     <TheButton @click="refresh()">Refresh</TheButton>
 
-    <pre>readmeData = {{ readmeData }}</pre>
-    <LoadingSpinner v-if="pendingReadme" />
+    <v-card elevation="12" class="ma-4 bg-primary">
+      <template #title> Hello from Vuetify! </template>
+      <v-card-text>
+        When you see this inside a card, it worked!
+        <pre>readmeData = {{ readmeData }}</pre>
+        <LoadingSpinner v-if="pendingReadme" />
+      </v-card-text>
+    </v-card>
     <TheButton @click="refreshReadme()">Refresh Readme</TheButton>
     <span v-if="errorReadme" style="color: red">{{ errorReadme }}</span>
     <p>{{ appConfig }}</p>
