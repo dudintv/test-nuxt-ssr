@@ -10,9 +10,7 @@ export default defineNuxtConfig({
     },
   },
   modules: [
-    // @ts-ignore
-    // this adds the vuetify vite plugin
-    // also produces type errors in the current beta release
+    "nuxt-purgecss",
     async (options, nuxt) => {
       nuxt.hooks.hook("vite:extendConfig", (config) => config.plugins.push(vuetify()));
     },
